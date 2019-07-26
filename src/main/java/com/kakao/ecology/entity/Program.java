@@ -28,7 +28,7 @@ public class Program {
     private Region region;
 
     @Column
-    private String shortInfo;
+    private String info;
 
     @Column
     private String detailInfo;

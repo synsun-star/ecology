@@ -15,6 +15,11 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
+    
+    @OneToMany
+    @JoinColumn(name = "programId")
+    @JsonIgnore
+    private Program programs;
 }
