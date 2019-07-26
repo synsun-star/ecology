@@ -1,5 +1,6 @@
 package com.kakao.ecology.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +19,7 @@ public class Region {
     @Column(unique = true)
     private String name;
     
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "programId")
     @JsonIgnore
     private Program programs;

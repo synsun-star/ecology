@@ -1,5 +1,7 @@
 package com.kakao.ecology.service;
 
+import com.kakao.ecology.entity.Region;
+import com.kakao.ecology.repository.ProgramRepository;
 import com.kakao.ecology.repository.RegionRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +16,12 @@ public class RegionService {
 
     @Autowired
     RegionRepository regionRepository;
-    
+
     @Autowired
     ProgramRepository programRepository;
-    
+
     public Region getProgramsByRegion() {
+        Region region = new Region();
         /*
         생태 관광지 중에 서비스 지역 컬럼에서 특정 지역에서 진행되는 프로그램명과 테마를
         출력하는 API 를 개발하세요.
@@ -42,9 +45,9 @@ public class RegionService {
             ]
             }
         */
-        return repository.find();
+        return region;
     }
-    
-    
-    
+
+
+
 }
