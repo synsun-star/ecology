@@ -27,3 +27,7 @@ spring.datasource.password=root
 설정 변경으로 이용 가능. 
 3. 아래 주소로 접속이 가능하도록 database인 ecology를 생성필요.
 > spring.datasource.url=jdbc:mysql://localhost/ecology?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false&useUnicode=true&charaterEncoding=utf-8
+
+### URL
+Postman API sample docs
+https://documenter.getpostman.com/view/277944/SVYkx2JB?version=latest
