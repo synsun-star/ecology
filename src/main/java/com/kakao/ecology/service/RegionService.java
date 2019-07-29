@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class RegionService {
@@ -19,6 +21,10 @@ public class RegionService {
 
     @Autowired
     ProgramRepository programRepository;
+
+    public List<Region> getRegion(String name) {
+        return regionRepository.findByNameLike("%"+name+"%");
+    }
 
     public Region getProgramsByRegion() {
         Region region = new Region();

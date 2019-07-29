@@ -1,5 +1,6 @@
 package com.kakao.ecology.service;
 
+import com.kakao.ecology.entity.Program;
 import com.kakao.ecology.entity.Region;
 import com.kakao.ecology.repository.ProgramRepository;
 import com.kakao.ecology.repository.RegionRepository;
@@ -8,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -20,12 +23,12 @@ public class ProgramService {
     @Autowired
     RegionRepository regionRepository;
 
-    public Region addProgram(String name) {
-        Region region = new Region();
-//        region.setRegionName(name);
+    public Program getProgram(String code) {
+        return programRepository.findById(Long.parseLong(code)).orElse(null);
+    }
 
-//        return repository.save(region);
-        return region;
+    public List<Region> getRegion(String name) {
+        return regionRepository.findByNameLike("%"+name+"%");
     }
 
     public int getKeywordCountAtInfoGroupByRegion(String keyword) {

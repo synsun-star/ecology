@@ -2,6 +2,7 @@ package com.kakao.ecology.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,14 +23,13 @@ public class Program {
     @Column
     private String category;
 
-    @OneToOne
-    @JoinColumn(name = "regionId")
+    @ManyToOne(targetEntity = Region.class, fetch = FetchType.LAZY)
     @JsonIgnore
     private Region region;
 
     @Column
     private String info;
 
-    @Column
+    @Column(columnDefinition = "TEXT")
     private String detailInfo;
 }
